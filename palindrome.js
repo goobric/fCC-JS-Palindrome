@@ -18,7 +18,18 @@
 
 palindrome('eye'); */
 
+document.addEventListener('DOMContentLoaded', function () {
+  // Pre-fill input with "race car" on page load
+  document.getElementById('text-input').value = 'race car';
+});
+
 function palindrome(str) {
+  // Check if the input is empty
+  if (!str.trim()) {
+    alert('Please input a value.');
+    return;
+  }
+  // Regex to remove all non-alphanumeric characters
   let originalString = str.replace(/[\W_]/g, '').toLowerCase();
 
   let strCheck = str
